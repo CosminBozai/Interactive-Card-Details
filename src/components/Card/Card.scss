@@ -1,0 +1,23 @@
+.card-back,
+.card-front {
+  position: absolute;
+  width: min(300px, 74%);
+  height: 160px;
+  border-radius: 6px;
+  background-size: cover;
+}
+
+.card-front {
+  z-index: 10;
+  bottom: -50px;
+  left: 42%;
+  transform: translateX(-50%);
+  background-image: url("../../assets/images/bg-card-front.png");
+}
+
+.card-back {
+  top: 30px;
+  left: 56%;
+  transform: translateX(-50%);
+  background-image: url("../../assets/images/bg-card-back.png");
+}

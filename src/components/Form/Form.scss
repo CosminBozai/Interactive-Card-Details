@@ -1,0 +1,85 @@
+$grayish-violet: hsl(270, 23%, 78%);
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  max-width: min(100%, 425px);
+}
+
+fieldset {
+  margin-bottom: 1.5rem;
+  border: none;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+input {
+  margin: 6px 0;
+  padding: 14px;
+  width: 100%;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $grayish-violet;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+  &:focus {
+    border-image-source: linear-gradient(
+      hsl(249, 99%, 64%),
+      hsl(278, 94%, 30%)
+    );
+  }
+  &::placeholder {
+    color: $grayish-violet;
+  }
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  .exp-date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exp-date-input-wrapper {
+    display: flex;
+    input {
+      margin-right: 10px;
+      width: 72px;
+    }
+  }
+
+  .cvc-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+
+.confirm-btn {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten(hsl(278, 68%, 11%), 10%);
+  }
+}
+
+.error-msg {
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+}
+
+.error {
+  border-color: red;
+}
