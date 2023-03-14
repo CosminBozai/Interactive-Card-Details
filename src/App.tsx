@@ -12,8 +12,12 @@ function App() {
       <main className="small">
         <Form />
       </main>
-      <header className="large"></header>
-      <main className="large"></main>
+      <header className="large">
+        <Card />
+      </header>
+      <main className="large">
+        <Form />
+      </main>
     </div>
   );
 }

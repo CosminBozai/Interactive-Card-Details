@@ -22,11 +22,14 @@ header.large {
 }
 
 header.large {
+  position: relative;
   width: 30%;
   background-image: url("./assets/images/bg-main-desktop.png");
 }
 
 main.large {
+  justify-content: center;
+  align-items: center;
   width: 70%;
 }
 
@@ -40,7 +43,10 @@ main.large {
     display: none;
   }
 
-  main.large,
+  main.large {
+    display: flex;
+  }
+
   header.large {
     display: block;
   }

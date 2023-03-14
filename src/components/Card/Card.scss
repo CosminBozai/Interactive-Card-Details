@@ -5,6 +5,7 @@
   height: 160px;
   border-radius: 6px;
   background-size: cover;
+  background-position: center;
 }
 
 .card-front {
@@ -20,4 +21,24 @@
   left: 56%;
   transform: translateX(-50%);
   background-image: url("../../assets/images/bg-card-back.png");
+}
+
+@media (min-width: 1024px) {
+  .card-back,
+  .card-front {
+    width: 340px;
+    height: 200px;
+  }
+
+  .card-back {
+    top: 50%;
+    left: 100%;
+    transform: translateX(-60%);
+  }
+
+  .card-front {
+    top: 20%;
+    left: 55%;
+    transform: translateX(-20%);
+  }
 }
