@@ -1,21 +1,29 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { CardDetails } from "../../App";
+import { useEffect } from "react";
 import "./Form.scss";
 
-interface FormInput {
-  cardholderName: string;
-  cardNumber: string;
-  expMonth: string;
-  expYear: string;
-  cvc: string;
+interface Props {
+  setCardDetails: React.Dispatch<React.SetStateAction<CardDetails>>;
 }
 
-function Form() {
+function Form({ setCardDetails }: Props) {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
-  } = useForm<FormInput>();
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+  } = useForm<CardDetails>();
+
+  useEffect(() => {
+    watch((data) => {
+      setCardDetails(data);
+    });
+  }, [watch]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
+
+  const onSubmit: SubmitHandler<CardDetails> = (data) => console.log(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,6 +47,7 @@ function Form() {
         <label htmlFor="cardNumber">CARD NUMBER</label>
         <input
           {...register("cardNumber", {
+            onChange: handleChange,
             required: "This field is required",
             pattern: { value: /^\d{16}$/, message: "Needs to be 16 digits" },
           })}

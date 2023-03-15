@@ -1,22 +1,38 @@
 import { useState } from "react";
-import "./App.scss";
 import Card from "./components/Card/Card";
 import Form from "./components/Form/Form";
+import "./App.scss";
+
+export interface CardDetails {
+  cardholderName?: string;
+  cardNumber?: string;
+  expMonth?: string;
+  expYear?: string;
+  cvc?: string;
+}
 
 function App() {
+  const [cardDetails, setCardDetails] = useState<CardDetails>({
+    cardholderName: "JANE APPLESEED",
+    cardNumber: "0000000000000000",
+    expMonth: "00",
+    expYear: "00",
+    cvc: "00",
+  });
+
   return (
     <div className="App">
       <header className="small">
-        <Card />
+        <Card cardDetails={cardDetails} />
       </header>
       <main className="small">
-        <Form />
+        <Form setCardDetails={setCardDetails} />
       </main>
       <header className="large">
-        <Card />
+        <Card cardDetails={cardDetails} />
       </header>
       <main className="large">
-        <Form />
+        <Form setCardDetails={setCardDetails} />
       </main>
     </div>
   );
