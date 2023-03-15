@@ -80,6 +80,9 @@ input {
   color: red;
 }
 
-.error {
+.invalid {
   border-color: red;
+  &:focus {
+    border: 1px solid red;
+  }
 }
