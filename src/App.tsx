@@ -13,11 +13,11 @@ export interface CardDetails {
 
 function App() {
   const [cardDetails, setCardDetails] = useState<CardDetails>({
-    cardholderName: "JANE APPLESEED",
-    cardNumber: "0000000000000000",
-    expMonth: "00",
-    expYear: "00",
-    cvc: "00",
+    cardholderName: "",
+    cardNumber: "",
+    expMonth: "",
+    expYear: "",
+    cvc: "",
   });
 
   return (

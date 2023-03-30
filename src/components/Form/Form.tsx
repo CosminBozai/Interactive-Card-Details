@@ -21,8 +21,6 @@ function Form({ setCardDetails }: Props) {
     });
   }, [watch]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
-
   const onSubmit: SubmitHandler<CardDetails> = (data) => console.log(data);
 
   return (
@@ -47,7 +45,6 @@ function Form({ setCardDetails }: Props) {
         <label htmlFor="cardNumber">CARD NUMBER</label>
         <input
           {...register("cardNumber", {
-            onChange: handleChange,
             required: "This field is required",
             pattern: { value: /^\d{16}$/, message: "Needs to be 16 digits" },
           })}

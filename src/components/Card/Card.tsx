@@ -14,13 +14,13 @@ function Card({ cardDetails }: Props) {
     <>
       {/* Back of the card  */}
       <div className="card-back">
-        <div className="card-cvc">{cvc}</div>
+        <div className="card-cvc">{cvc || "123"}</div>
       </div>
 
       {/* Front of the card  */}
       <div className="card-front">
         <CardLogo className="card-logo" />
-        <div className="card-number">
+        <div className="card-number" data-testid="card-number">
           <span>{diplayNumbers[0]}</span>
           <span>{diplayNumbers[1]}</span>
           <span>{diplayNumbers[2]}</span>
@@ -42,8 +42,10 @@ function Card({ cardDetails }: Props) {
           <span>{diplayNumbers[15]}</span>
         </div>
         <div className="card-front-bottom">
-          <div className="card-name">{cardholderName}</div>
-          <div className="card-exp-date">{expMonth + "/" + expYear}</div>
+          <div className="card-name">{cardholderName || "Jane Appleseed"}</div>
+          <div className="card-exp-date" data-testid="exp-date">
+            {expMonth || "00"} / {expYear || "00"}
+          </div>
         </div>
       </div>
     </>
