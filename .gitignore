@@ -23,6 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-README*
 style-guide*
 design
